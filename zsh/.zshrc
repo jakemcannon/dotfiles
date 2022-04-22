@@ -9,15 +9,15 @@ setopt inc_append_history
 setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
-export PROMPT='%F{46}%n@%m%f %F{21}%~%f $ '
 export GREP_OPTIONS='--color=always'
+export PROMPT='%F{46}%n@%m%f %F{21}%~%f $ '
 
-alias vim='nvim'
+alias cp='cp -v'
+alias grep='grep -n'
 alias history='history -f'
 alias ls='ls -F -G'
 alias mv='mv -v'
-alias cp='cp -v'
 alias rm='rm -v'
-alias grep='grep -n'
+alias vim='nvim'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
