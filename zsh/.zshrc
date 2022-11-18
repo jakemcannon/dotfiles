@@ -1,12 +1,10 @@
-# number of lines kept in history
-export HISTSIZE=1000000
-# number of lines saved in the history after logout
-export SAVEHIST=1000000
-# location of history
 export HISTFILE=~/.zhistory
-# append command to history file once executed
-setopt inc_append_history
+export HISTSIZE=1000000 # number of lines stored in memory
+export SAVEHIST=1000000 # number of lines stored on disk
+setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS # Remove unnecessary blank lines
 setopt EXTENDED_HISTORY
 
 export GREP_OPTIONS='--color=always'
