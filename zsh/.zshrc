@@ -7,7 +7,6 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS # Remove unnecessary blank lines
 setopt EXTENDED_HISTORY
 
-export GREP_OPTIONS='--color=always'
 # Prompt. Using single quotes around the PROMPT is very important, otherwise
 # the git branch will always be empty. Using single quotes delays the
 # evaluation of the prompt. Also PROMPT is an alias to PS1.
@@ -23,8 +22,10 @@ git_prompt() {
 
     [ -n "${branch}" ] && echo " (${branch})"
 }
+
 setopt PROMPT_SUBST
 export PROMPT='%F{46}%n@%m%f %F{21}%~%f%{$fg[yellow]%}$(git_prompt)%{$reset_color%} $ '
+export GREP_OPTIONS='--color=always'
 
 
 alias cp='cp -v'
@@ -36,3 +37,10 @@ alias rm='rm -v'
 alias vim='nvim'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# pyenv shell configuration
+# - suggested from pyenv README https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+

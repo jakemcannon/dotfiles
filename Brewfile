@@ -11,4 +11,5 @@ brew "ripgrep"
 brew "stow"
 brew "tree"
 brew "vim"
+brew "pyenv"
 
