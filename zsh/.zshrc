@@ -24,7 +24,7 @@ git_prompt() {
 }
 
 setopt PROMPT_SUBST
-export PROMPT='%F{46}%n@%m%f %F{21}%~%f%{$fg[yellow]%}$(git_prompt)%{$reset_color%} $ '
+export PROMPT='%F{46}%n@%m%f %F{99}%~%f%{$fg[yellow]%}$(git_prompt)%{$reset_color%} $ '
 export GREP_OPTIONS='--color=always'
 
 
