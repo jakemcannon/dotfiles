@@ -35,6 +35,7 @@ alias ls='ls -F -G'
 alias mv='mv -v'
 alias rm='rm -v'
 alias vim='nvim'
+alias c='clear'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
