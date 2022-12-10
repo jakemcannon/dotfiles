@@ -5,4 +5,9 @@
 	l = log --oneline
 	dag = log --decorate --graph --oneline --all
 [core]
-	editor = nvim
+    editor = nvim
+
+[user]
+    name = Jake Cannon
+    email = jakecan13@gmail.com
+
