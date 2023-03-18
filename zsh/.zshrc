@@ -8,6 +8,8 @@ setopt HIST_REDUCE_BLANKS # Remove unnecessary blank lines
 setopt EXTENDED_HISTORY
 set o -vi
 
+source .aliases
+
 # Prompt. Using single quotes around the PROMPT is very important, otherwise
 # the git branch will always be empty. Using single quotes delays the
 # evaluation of the prompt. Also PROMPT is an alias to PS1.
@@ -31,9 +33,13 @@ export PROMPT='%F{46}%n@%m%f %F{99}%~%f%{$fg[yellow]%}$(git_prompt)%{$reset_colo
 export GREP_OPTIONS='--color=always'
 
 
-source .aliases
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# load git completion
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+
+autoload -Uz compinit && compinit
 
 # pyenv shell configuration
 # - suggested from pyenv README https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv
