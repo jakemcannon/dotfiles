@@ -15,13 +15,15 @@ set o -vi
 # - https://github.com/nickjj/dotfiles/blob/master/.config/zsh/.zshrc#L10
 # - https://www.youtube.com/watch?v=-gYtV9z7hhw&t=268s&ab_channel=NickJanetakis
 git_prompt() {
-    local branch="$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3)"
-    local branch_truncated="${branch:0:30}"
-    if (( ${#branch} > ${#branch_truncated} )); then
-        branch="${branch_truncated}..."
+    local branch="$(git symbolic-ref HEAD 2>/dev/null)"
+    if [[ -n $branch ]]; then
+        branch="${branch#refs/heads/}"
+        local branch_truncated="${branch:0:30}"
+        if (( ${#branch} > ${#branch_truncated} )); then
+            branch="${branch_truncated}..."
+        fi
+        echo " (${branch})"
     fi
-
-    [ -n "${branch}" ] && echo " (${branch})"
 }
 
 setopt PROMPT_SUBST
