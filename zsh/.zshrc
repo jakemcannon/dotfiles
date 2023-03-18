@@ -28,14 +28,7 @@ export PROMPT='%F{46}%n@%m%f %F{99}%~%f%{$fg[yellow]%}$(git_prompt)%{$reset_colo
 export GREP_OPTIONS='--color=always'
 
 
-alias cp='cp -v'
-alias grep='grep -n'
-alias history='history -f'
-alias ls='ls -F -G'
-alias mv='mv -v'
-alias rm='rm -v'
-alias vim='nvim'
-alias c='clear'
+source .aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
