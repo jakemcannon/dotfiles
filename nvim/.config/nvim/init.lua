@@ -1,7 +1,2 @@
-require("laitopez.plugins-setup")
-require("laitopez.core.options")
-require("laitopez.core.colorscheme")
-require("laitopez.core.keymaps")
-require("laitopez.plugins.gitsigns")
-require("laitopez.plugins.treesitter")
-require("laitopez.plugins.telescope")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
