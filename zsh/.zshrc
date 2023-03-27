@@ -6,9 +6,9 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS # Remove unnecessary blank lines
 setopt EXTENDED_HISTORY
-set o -vi
+setopt vi
 
-source .aliases
+source ~/.aliases
 
 # Prompt. Using single quotes around the PROMPT is very important, otherwise
 # the git branch will always be empty. Using single quotes delays the
