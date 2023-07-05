@@ -7,6 +7,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS # Remove unnecessary blank lines
 setopt EXTENDED_HISTORY
 setopt vi
+unsetopt BEEP
 
 source ~/.aliases
 
