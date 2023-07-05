@@ -12,4 +12,5 @@ brew "stow"
 brew "tree"
 brew "vim"
 brew "pyenv"
+brew "diff-so-fancy"
 

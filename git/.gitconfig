@@ -6,8 +6,11 @@
 	dag = log --decorate --graph --oneline --all
 [core]
     editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [user]
     name = Jake Cannon
     email = jakecan13@gmail.com
 
+[interactive]
+	diffFilter = diff-so-fancy --patch
