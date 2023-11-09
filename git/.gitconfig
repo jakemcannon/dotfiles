@@ -1,6 +1,8 @@
 [alias]
-    a = add
-	b = branch
+  a = add
+  b = branch
+  c = commit
+  cm = commit -m
 	s = status
 	l = log --oneline
 	dag = log --decorate --graph --oneline --all
