@@ -5,5 +5,7 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -vi'
 alias v='nvim'
+alias vim='nvim'
 alias c='clear'
+alias got='git'
 
