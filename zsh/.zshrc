@@ -5,7 +5,7 @@ setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS # Remove unnecessary blank lines
-setopt EXTENDED_HISTORY
+#setopt EXTENDED_HISTORY
 setopt vi
 unsetopt BEEP
 
@@ -47,4 +47,4 @@ autoload -Uz compinit && compinit
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
+eval "$(zoxide init zsh)"
