@@ -6,7 +6,7 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS # Remove unnecessary blank lines
 #setopt EXTENDED_HISTORY
-setopt vi
+
 unsetopt BEEP
 
 source ~/.aliases
@@ -33,6 +33,40 @@ setopt PROMPT_SUBST
 export PROMPT='%F{46}%n@%m%f %F{99}%~%f%{$fg[yellow]%}$(git_prompt)%{$reset_color%} $ '
 export GREP_OPTIONS='--color=always'
 
+###########
+# VI MODE #
+###########
+# https://unix.stackexchange.com/a/614203
+#
+# vi mode
+setopt vi
+export KEYTIMEOUT=1
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+
+###########
+# VI MODE #
+###########
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
