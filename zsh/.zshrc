@@ -68,7 +68,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # VI MODE #
 ###########
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # load git completion
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
@@ -81,4 +81,3 @@ autoload -Uz compinit && compinit
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(zoxide init zsh)"
